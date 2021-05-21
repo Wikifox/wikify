@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/plugins/animate_v4/style.css" type="text/css">
+        <link rel="stylesheet" href="css/fonts.css" type="text/css">
+        <link rel="stylesheet" href="css/responsive.css" type="text/css">
+        <link rel="stylesheet" href="css/harrify-ui.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="icon" type="image/png" href="assets/images/favicon_48.png">
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wikify - A Simplified WikiPedia</title>
+
+    </head>
+    <body>
+        <div class="open-overlay us">
+            <div class="history-header">
+                <div>
+                    <a href="index.html">
+                        <img class="fav-img" src="assets/images/favicon_48.png" alt="">
+                    </a>
+                </div>
+
+                <input type="text" class="clean-input filter-history" id="filter-js" oninput="filterItem()" placeholder="Filter history">
+                <h1 class="fav-title">Read History</h1>
+            </div>
+            <div class="search-items-wrapper grad-scroll">
+                <div class="item-box history-box us"></div>
+            </div>
+        </div>
+
+
+    </body>
+    
+    <script src="assets/plugins/jq/jquery.js"></script>
+    <script src="assets/plugins/magic.scroll/scroll.js"></script>
+    <script src="js/cblob.js"></script>
+    <script src="js/hist.js"></script>
+
+</html>

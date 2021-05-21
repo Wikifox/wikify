@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/plugins/animate_v4/style.css" type="text/css">
+        <link rel="stylesheet" href="css/fonts.css" type="text/css">
+        <link rel="stylesheet" href="css/harrify-ui.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/responsive.css" type="text/css">
+        <link rel="icon" type="image/png" href="assets/images/favicon_48.png">
+
+        <meta name="title" content="Wikify - A simplified Wikipedia powered by Wikipedia!">
+        <meta name="description" content="Wikify is a Wikipedia based engine, which gets you clean and perfect results for your search! You can trust wikify as the content is delivered by Wikipedia!">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://wikify.ml/">
+        <meta property="og:title" content="Wikify - A simplified Wikipedia powered by Wikipedia!">
+        <meta property="og:description" content="Wikify is a Wikipedia based engine, which gets you clean and perfect results for your search! You can trust wikify as the content is delivered by Wikipedia!">
+        <meta property="og:image" content="assets/images/favicon_96.png">
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="http://wikify.ml">
+        <meta property="twitter:title" content="Wikify - A simplified Wikipedia powered by Wikipedia!">
+        <meta property="twitter:description" content="Wikify is a Wikipedia based engine, which gets you clean and perfect results for your search! You can trust wikify as the content is delivered by Wikipedia!">
+        <meta property="twitter:image" content="assets/images/favicon_96.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wikify - A Simplified WikiPedia</title>
+
+    </head>
+    <body>
+        <div class="open-overlay center-flex about-overlay">
+            <div class="about-pop us">
+                <div class="settings-close center-flex">
+                    <i class="material-icons">close</i>
+                </div>
+                <div class="image-earth">
+                    <img src="assets/images/earth.gif" alt="">
+                </div>
+                <div class="about-text">
+                    <h1>Wikify v2.3</h1>
+                    <h6>Hello there! Wikify is a Wikipedia based engine, which gets you clean and perfect results for your search! You can trust wikify as the content is delivered by Wikipedia!</h6>
+                    <a target="_blank" href="https://harry260.github.io">Made with ❤ by Harry Tom</a>
+                </div>
+            </div>
+        </div>
+        <div class="open-overlay settings-overlay center-flex">
+            <div class="settings-pop us">
+                <div>
+                    <div class="settings-close center-flex">
+                        <i class="material-icons">close</i>
+                    </div>
+                </div>
+                <div class="pop-item-head">
+                    <h2>Default mode</h2>
+                    <p class="des-setup">Simplified mode is now on beta. Some articles are not avaiilable in simplified mode</p>
+                    <select class="settings-select mode-sel">
+                        <option value="en">Explained</option>
+                        <option value="simple">Simplified [BETA]</option>
+                    </select>
+                </div>
+                <div class="pop-item-head">
+                    <h2>History</h2>
+                    <p class="des-setup">When you open an article, it will be logged here locally.</p>
+                    <select class="settings-select his-sel">
+                        <option value="on">Turned On</option>
+                        <option value="off">Turned Off</option>
+                    </select>
+                </div>
+                <div class="pop-item-head">
+                    <h2>Clear history</h2>
+                    <p class="des-setup">Clear all the read history</p>
+                    <button class="settings-select delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="open-overlay overlay-search">
+            <div class="search-header">
+                <div class="close-button center-flex us">
+                    <i class="material-icons">close</i>
+                </div>
+            </div>
+            <div class="search-items-wrapper grad-scroll">
+                <div class="item-box us"></div>
+                
+            </div>
+        </div>
+
+        <div class="wiki-header">
+            <div class="wiki-icon-wrap">
+                <div class="wiki-icon back-100"></div>
+                <div class="wiki-pop-root"></div>
+            </div>
+            <div class="wiki-more">
+                <div class="more-icon">
+                    <div class="more-dot"></div>
+                    <div class="more-dot"></div>
+                    <div class="more-dot"></div>
+                </div>
+            </div>
+            <div class="more-pop us">
+                <div class="pop-item toggle-theme">
+                    <h1>Toggle theme</h1>
+                </div>
+                <a href="history.html">
+                    <div class="pop-item">
+                        <h1>History</h1>
+                    </div>
+                </a>
+                <div class="pop-item settings-btn">
+                    <h1>Settings</h1>
+                </div>
+                <a href="developer.html">
+                    <div class="pop-item">
+                        <h1>Developer</h1>
+                    </div>
+                </a>
+                <div class="pop-item about-btn">
+                    <h1>About</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="search-wrap center-flex us">
+
+            <div class="search-inner">
+                <div class="bar-wrap center-flex">
+                    <i class="material-icons search-icon-input">search</i>
+                    <input type="text" class="search-input clean-input" placeholder="search what?! try 'tesla'">
+                </div>
+                <div class="hero-text-search">
+                    <h1>Search anything, and get a clean result. No need to worry, everything is from wikipedia!</h1>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+    
+    <script src="assets/plugins/jq/jquery.js"></script>
+    <script src="assets/plugins/magic.scroll/scroll.js"></script>
+    <script src="js/app.ui.js"></script>
+    <script src="js/cblob.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/today.js"></script>
+
+</html>

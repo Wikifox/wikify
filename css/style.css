@@ -1,0 +1,588 @@
+*{
+    font-family: sf-regular;
+    margin: 0;
+    padding: 0;
+    outline-width: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --wikify-background: #121212;
+    --wikify-secondry: #9B9B9B;
+    --wikify-slight:rgb(36, 36, 36);
+    --wikkify-box-shadow: 0 4px 30px rgb(0 0 0 / 50%);
+    --grad-1: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    --text-color:white;
+    --wikify-hover:rgb(27, 27, 27);
+}
+
+
+body{
+    overflow: hidden !important;
+    background-color: var(--wikify-background);
+}
+
+
+.wiki-icon{
+    background-image: url("../assets/images/favicon_96.png");
+    width: 80px;
+    height: 80px;
+
+    -webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 10s linear infinite;
+    cursor: pointer;
+}
+
+.wiki-header{
+    width: 100%;
+    position: fixed;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more-icon{
+    display: flex;
+    height: 33px;
+    align-items: center;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.more-icon:hover .more-dot{
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+.more-dot{
+    width: 9px;
+    height: 9px;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    margin-right: 2px;
+}
+
+.search-wrap{
+    width: 100%;
+    height: 100vh;
+}
+
+.search-input{
+    font-size: 20px;
+}
+
+.clean-input{
+    outline-width: 0;
+    border: none;
+    color: var(--text-color);
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+}
+
+.bar-wrap{
+    background-color: var(--wikify-slight);
+    border-radius: 10px;
+    padding: 20px;
+    width: 450px;
+}
+
+.grad-scroll::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: transparent;
+    cursor: grab;
+}
+
+.grad-scroll::-webkit-scrollbar
+{
+	width: 5.0px;
+    cursor: grab;
+}
+
+.grad-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #555;
+    background-image: var(--grad-1);
+    cursor: grab;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+.search-icon-input{
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+.hero-text-search h1{
+    font-size: 18px;
+    width: 450px;
+    line-height: 22px;
+    color: grey;
+    margin-top: 20px;
+    font-family: sf-regular;
+}
+
+.cblob{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.suggestions-wrap{
+    display: block;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.overlay-search{
+    background-color: rgba(0, 0, 0, 0.87);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.search-header{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    position: fixed;
+}
+
+.close-button{
+    background-color: var(--wikify-slight);
+    height: 40px;
+    width: 40px;
+    color: var(--text-color);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.close-button:hover{
+    background-color: var(--wikify-background);
+}
+
+.search-items-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.item-box{
+    width: 600px;
+    height: fit-content;
+}
+.search-items-wrapper{
+    overflow-y: scroll;
+}
+
+
+.item-wrap{
+    display: flex;
+    padding: 20px;
+    background-color: var(--wikify-background);
+    box-shadow: var(--wikkify-box-shadow);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.item-wrap:hover{
+    transform: scale(1.05) rotate(-1deg);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item-image img{
+    max-width: 250px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item-text{
+    color: var(--text-color);
+}
+
+.item-text h1{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.item-text h6{
+    font-size: 14px;
+    color: grey;
+    font-family: sf-medium;
+    width: 90%;
+}
+
+.result-overlay{
+    background-image: linear-gradient(to right,black  0%, #141414 100%);
+    padding: 50px 0;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.inner-result{
+    margin-top: 50px;
+    width: 800px;
+    padding-bottom: 50px;
+    height: fit-content;
+}
+
+.image-result{
+    background-color: var(--wikify-background);
+    box-shadow: var(--wikkify-box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    height: fit-content;
+    margin-bottom: 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-result-img{
+    height: 100%;
+    z-index: 2;
+}
+
+.blurrify{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    filter: blur(10px);
+}
+
+.text-result h1{
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 55px;
+}
+
+.text-result p{
+    color: grey;
+    font-family: sf-medium;
+}
+.result-header{
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    background: rgba(29,29,31,0.72);
+    padding: 0 20px;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-wrap-result{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.title-page{
+    color: var(--text-color);
+    font-size: 20px;
+    margin-left: 15px;
+    text-transform: capitalize;
+}
+
+.favicon-result-header{
+    background-image: url('../assets/images/favicon_48.png');
+    height: 40px;
+    width: 40px;
+}
+
+.nav-result{
+    display: flex;
+    height: 60px;
+}
+
+.nav-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.text-nav h1{
+    color: var(--text-color);
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.indic{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.indic-active{
+    background: #0071e3;
+}
+
+.simplified-404{
+    background-color: var(--wikify-background);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.s-404{
+    font-size: 20px !important;
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 20px;
+}
+
+.simplified-404 p{
+    line-height: 18px !important;
+}
+
+.loading-screen{
+    background-color: black;
+}
+
+.inner-loader{
+    width: 100px;
+    height: 100px;
+    background-image: url('../assets/images/loading.gif');
+    border-radius: 100px;
+}
+
+.more-pop{
+    background-color: var(--wikify-slight);
+    position: fixed;
+    top: 120px;
+    right: 50px;
+    border-radius: 5px !important;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px 0;
+    box-shadow: var(--wikkify-box-shadow);
+    display: none;
+}
+
+.pop-item h1{
+    font-size: 15px;
+    color: var(--text-color);
+    padding: 8px 20px;
+    text-align: left;
+}
+
+.pop-item:hover{
+    background-color: var(--wikify-hover);
+}
+
+.history-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.fav-title{
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+.fav-img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.filter-history{
+    background-color: var(--wikify-slight);
+    width: 400px;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.his-info{
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.settings-overlay{
+    background-color: rgba(0, 0, 0, 0.87);
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.settings-pop{
+    background-color: var(--wikify-slight);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--wikkify-box-shadow);
+}
+
+.pop-item-head{
+    color: var(--text-color);
+    font-size: 10px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.pop-item-head h2{
+    color: var(--text-color);
+}
+
+.settings-select{
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--wikify-secondry);
+    outline-width: 0;
+    border:none;
+}
+
+.settings-select:hover{
+    transform: scale(1.1);
+}
+
+.des-setup{
+    width: 220px;
+    line-height: 14px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: gray;
+    font-family: sf-medium;
+}
+
+.settings-close{
+    width: 30px;
+    background-color: var(--wikify-background);
+    border-radius: 30px;
+    height: 30px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 13px;
+    padding: 6px;
+}
+
+.settings-close:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+@media print {
+    .result-header{
+        display: none;
+    }
+
+    .image-result{
+        display: none;
+    }
+}
+
+.wikipop{
+    background-color: var(--wikify-slight);
+    max-width: 400px;
+    padding: 15px 18px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: var(--wikkify-box-shadow);
+    display: none;
+}
+
+.wikipop p {
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: sf-bold;
+}
+
+.chat-angle{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top :-5px;
+    z-index: 9;
+    background-color: var(--wikify-slight);
+    transform: rotate(45deg);
+}
+
+.grad-fill{
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: sf-heavy;
+}
+
+.about-overlay{
+    display: none;
+}
+
+.about-pop{
+    width: 400px;
+    background-color: white;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: var(--wikkify-box-shadow);
+    text-align: center;
+}
+
+
+.image-earth img{
+    width: 150px;
+}
+
+.about-text h1{
+    font-family: sf-bold;
+}
+
+.about-text h6{
+    font-size: 12px;
+    color: gray;
+    line-height: 14px;
+}
+
+.about-text a{
+    color: dodgerblue;
+    font-size: 12px;
+    font-family: sf-bold;
+    margin-top: 10px;
+}

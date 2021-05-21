@@ -1,0 +1,22 @@
+:root{
+    --wikify-background: white !important;
+    --wikify-secondry: #9B9B9B !important;
+    --wikify-slight:#eeeeee !important;
+    --wikkify-box-shadow: 0 4px 30px rgb(0 0 0 / 10%)  !important;
+    --grad-1: linear-gradient(180deg, #2af598 0%, #009efd 100%)  !important;
+    --text-color:#121212 !important;
+    --wikify-hover:rgba(27, 27, 27, 0.178) !important;
+}
+
+.overlay-search{
+    background-color: rgb(255 255 255 / 21%) !important;
+}
+
+.result-overlay{
+    background-image:none!important;
+    background-color: white;
+}
+
+.result-header{
+    background-color: rgb(238 238 238 / 72%) !important;
+}
