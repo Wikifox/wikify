@@ -2,6 +2,12 @@
 # [Wikify](https://wikifox.github.io/wikify)
 ### Wikify is the old version of **[Wikifox](https://wikifox.ml)**! This iss no longer maintained. You can still use/view this page, [click here](https://wikify.ml/). Wikify is also powered by Official Wikipedia API. With Wikifox, You will get simplified and small definition. 
 
+<br>
+
+![Screenshot](https://raw.githubusercontent.com/Harry260/harry260.github.io/main/old/assets/images/wikify.gif)
+
+<br>
+
 # Features
 
 - ☀️ Light and Dark thmes
